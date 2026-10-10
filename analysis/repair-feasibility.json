@@ -1,0 +1,125 @@
+{
+  "status": "synthetic feasibility only; hand-authored repairs; no LLM evaluated",
+  "source_sha256": "433f4b1b4f081ef326b5d36839e8c8a873de0292441bffa38cfa4c7ab306a046",
+  "oracle_allowed": 5,
+  "transitions": {
+    "initial->targeted": {
+      "universe_size": 24,
+      "visible_passed": 2,
+      "visible_total": 2,
+      "mismatches": 0,
+      "fixed": 4,
+      "new_security_regressions": 0,
+      "new_availability_regressions": 0,
+      "regression_witnesses": []
+    },
+    "initial->overbroad": {
+      "universe_size": 24,
+      "visible_passed": 2,
+      "visible_total": 2,
+      "mismatches": 4,
+      "fixed": 4,
+      "new_security_regressions": 4,
+      "new_availability_regressions": 0,
+      "regression_witnesses": [
+        {
+          "request": {
+            "principal": "operator",
+            "action": "read",
+            "resource": "logs",
+            "trusted": false
+          },
+          "before": false,
+          "after": true,
+          "expected": false
+        },
+        {
+          "request": {
+            "principal": "operator",
+            "action": "read",
+            "resource": "config",
+            "trusted": false
+          },
+          "before": false,
+          "after": true,
+          "expected": false
+        },
+        {
+          "request": {
+            "principal": "operator",
+            "action": "write",
+            "resource": "logs",
+            "trusted": false
+          },
+          "before": false,
+          "after": true,
+          "expected": false
+        },
+        {
+          "request": {
+            "principal": "operator",
+            "action": "write",
+            "resource": "config",
+            "trusted": false
+          },
+          "before": false,
+          "after": true,
+          "expected": false
+        }
+      ]
+    },
+    "targeted->write_blocked": {
+      "universe_size": 24,
+      "visible_passed": 2,
+      "visible_total": 2,
+      "mismatches": 2,
+      "fixed": 0,
+      "new_security_regressions": 0,
+      "new_availability_regressions": 2,
+      "regression_witnesses": [
+        {
+          "request": {
+            "principal": "operator",
+            "action": "write",
+            "resource": "logs",
+            "trusted": true
+          },
+          "before": true,
+          "after": false,
+          "expected": true
+        },
+        {
+          "request": {
+            "principal": "operator",
+            "action": "write",
+            "resource": "config",
+            "trusted": true
+          },
+          "before": true,
+          "after": false,
+          "expected": true
+        }
+      ]
+    },
+    "targeted->equivalent": {
+      "universe_size": 24,
+      "visible_passed": 2,
+      "visible_total": 2,
+      "mismatches": 0,
+      "fixed": 0,
+      "new_security_regressions": 0,
+      "new_availability_regressions": 0,
+      "regression_witnesses": []
+    },
+    "overbroad->targeted": {
+      "universe_size": 24,
+      "visible_passed": 2,
+      "visible_total": 2,
+      "mismatches": 0,
+      "fixed": 4,
+      "new_security_regressions": 0,
+      "new_availability_regressions": 0,
+      "regression_witnesses": []
+    }
+  }
+}

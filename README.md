@@ -1,12 +1,12 @@
 # Evidence-age interfaces for remediation approval
 
-**Status: Reserve.** Research proposal only; no experiments, validated novelty, dataset, or final paper is asserted for this repository.
+**Status: Feasibility infrastructure available; novelty gate not passed.** The human-study proposal remains on hold. An original finite-domain policy-repair audit and ten passing tests are available. Hand-authored fixtures demonstrate measurement only, not AI performance or a new discovery. See [results and research decision](protocol/repair-feasibility-result-2026-10-09.md). Run `python -m unittest discover -s tests -v` and `python src/repair_audit.py`.
 
 [Research protocol and prior-art leads](protocol/research-plan.md). This plan comes from the October 4, 2026 independent research portfolio. Its literature assessment must be refreshed before implementation and submission.
 
 ## Research identity and publication route
 
-Author: **Ezekiel Ologunde**. Affiliation: **Independent Researcher**, with no institutional affiliation. Corresponding email is pending confirmation. Intended route: a suitable ACM journal, selected after assessing the completed contribution. No journal has accepted this work and no publisher metadata or DOI is assigned.
+Author: **Ezekiel Ologunde**. Affiliation: **Independent Researcher**, with no institutional affiliation. Email: ologunde@bu.edu; no corresponding-author designation requested. Intended route: a suitable ACM journal, selected after assessing the completed contribution. No journal has accepted this work and no publisher metadata or DOI is assigned.
 
 ## Repository workflow
 
