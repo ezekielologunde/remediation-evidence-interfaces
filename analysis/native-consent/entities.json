@@ -1,0 +1,50 @@
+[
+  {
+    "uid": {
+      "type": "Role",
+      "id": "PrincipalInvestigator"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "Role",
+      "id": "GlobalAuditor"
+    },
+    "attrs": {},
+    "parents": []
+  },
+  {
+    "uid": {
+      "type": "User",
+      "id": "auditor"
+    },
+    "attrs": {
+      "department": "A",
+      "clearanceLevel": 0
+    },
+    "parents": [
+      {
+        "type": "Role",
+        "id": "PrincipalInvestigator"
+      },
+      {
+        "type": "Role",
+        "id": "GlobalAuditor"
+      }
+    ]
+  },
+  {
+    "uid": {
+      "type": "Document",
+      "id": "record"
+    },
+    "attrs": {
+      "classification": "HighlyRestricted",
+      "projectStatus": "Active",
+      "projectManagingDepartment": "B"
+    },
+    "parents": []
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "principal": "User::\"auditor\"",
+  "action": "Action::\"View\"",
+  "resource": "Document::\"record\"",
+  "context": {
+    "networkRiskScore": 0,
+    "isCompliantDevice": true,
+    "hasPatientConsent": false
+  }
+}

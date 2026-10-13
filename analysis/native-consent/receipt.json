@@ -1,0 +1,552 @@
+{
+  "upstream_commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "input_manifest": [
+    {
+      "path": "schema.cedarschema",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/schema.cedarschema",
+      "sha256": "5f221c137018d7cbe04e15edab42b2417c3a57826132846836f87c759209ba7e"
+    },
+    {
+      "path": "policy_spec.md",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/policy_spec.md",
+      "sha256": "69e4d91381b059789dee745a68a0ba6512701294b4c202470dc7c5f0f157a149"
+    },
+    {
+      "path": "verification_plan.py",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/verification_plan.py",
+      "sha256": "046c87251e8db263f03f4f6b3d7accd5511ab85ead8ef87dff42de79e3dfcc70"
+    },
+    {
+      "path": "references/ceiling_view.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/ceiling_view.cedar",
+      "sha256": "2ffd5dfef8a00d491ee4b1382b3140b2f0e6c03a83e11f14aa705da5e7a14b0c"
+    },
+    {
+      "path": "references/ceiling_edit.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/ceiling_edit.cedar",
+      "sha256": "c78242ac605c9c403ce571e80f8f7fb7e8288e7051697bb9d8bdf066ea8c0915"
+    },
+    {
+      "path": "references/ceiling_view_dept.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/ceiling_view_dept.cedar",
+      "sha256": "6e5b4114ffc731b04ef01a2447d7e997987510dfd3c920d1b6bf4256ba57aa26"
+    },
+    {
+      "path": "references/ceiling_edit_dept.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/ceiling_edit_dept.cedar",
+      "sha256": "4153ecc4ea71ed2c46e3be771b67d28f228ca42497946fd38e449a0484efbb00"
+    },
+    {
+      "path": "references/ceiling_edit_consent.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/ceiling_edit_consent.cedar",
+      "sha256": "2accc9c1acae8d9483a6555eee8bc0bfaadf0dab57fc6533d2a01089b06aa7e9"
+    },
+    {
+      "path": "references/floor_cr_view.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/floor_cr_view.cedar",
+      "sha256": "f8800a4768104f9e9d623e9adfd5423eb33347976b8d360469e094204e0f40ab"
+    },
+    {
+      "path": "references/floor_pi_view.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/floor_pi_view.cedar",
+      "sha256": "d1e4db6a2964321d57dd6cd8a7f4411d9665b2dbebb017b90b2aed9dd734ea2f"
+    },
+    {
+      "path": "references/floor_pi_edit.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/floor_pi_edit.cedar",
+      "sha256": "5a03f4bb517f538b632a5a56672b61d746c96a86f654d869b306313337b4d3d5"
+    },
+    {
+      "path": "references/floor_cr_edit.cedar",
+      "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_add_consent/references/floor_cr_edit.cedar",
+      "sha256": "cc73a9c124140c6c80ec3eb26f35501894d9b38b657a74307351408fc52c04f7"
+    }
+  ],
+  "records": [
+    {
+      "name": "cedar_version",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "cedar-policy-cli 4.13.0\n",
+      "stderr": ""
+    },
+    {
+      "name": "cvc5_version",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "cvc5 1.4.2 [git 282d5e0 on branch HEAD]\ncompiled as a unrestricted build with GCC version Clang 22.1.7 (https://github.com/msys2/MINGW-packages b8f306ad57e0c8f3f15aed0dc809d7e3e8e2eee9) on Oct  8 2026 01:28:28\n\nCopyright (c) 2009-2026 by the authors and their institutional\naffiliations listed at https://cvc5.github.io/people.html\n\ncvc5 is open-source and is covered by the BSD license (modified).\n\nTHIS SOFTWARE IS PROVIDED AS-IS, WITHOUT ANY WARRANTIES.\nUSE AT YOUR OWN RISK.\n\nThis version of cvc5 is linked against the following non-(L)GPL'ed\nthird party libraries.\n\n  CaDiCaL - Simplified Satisfiability Solver\n  See https://github.com/arminbiere/cadical for copyright information.\n\n  SymFPU - The Symbolic Floating Point Unit\n  See https://github.com/martin-cs/symfpu/tree/main for copyright information.\n\nThis version of cvc5 is linked against the following third party\nlibraries covered by the LGPLv3 license.\nSee licenses/lgpl-3.0.txt for more information.\n\n  GMP - Gnu Multi Precision Arithmetic Library\n  See http://gmplib.org for copyright information.\n\n  LibPoly polynomial library\n  See https://github.com/SRI-CSL/libpoly for copyright and\n  licensing information.\n\ncvc5 is statically linked against these libraries. To recompile\nthis version of cvc5 with different versions of these libraries\nfollow the instructions on https://github.com/cvc5/cvc5/blob/main/INSTALL.md\n\nSee the file COPYING (distributed with the source code, and with\nall binaries) for the full cvc5 copyright, licensing, and (lack of)\nwarranty information.\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "validate_candidate",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "validate",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "validate_intended",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "validate",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\intended.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "validate_auditor_floor",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "validate",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\auditor_floor.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "ceiling_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\ceiling_view.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "ceiling_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\ceiling_edit.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "ceiling_view_dept",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\ceiling_view_dept.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "ceiling_edit_dept",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\ceiling_edit_dept.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "ceiling_edit_consent",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\ceiling_edit_consent.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "floor_cr_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\floor_cr_view.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "floor_pi_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\floor_pi_view.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "floor_pi_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\floor_pi_edit.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "floor_cr_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\references\\floor_cr_edit.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "liveness_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "always-denies",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"View\", resource: Document::\"\"\ncontext: {hasPatientConsent: true, isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Action::\"Edit\",\n  Role::\"PrincipalInvestigator\",\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n  Role::\"ClinicalResearcher\",\n  Action::\"View\",\n]\n",
+      "stderr": ""
+    },
+    {
+      "name": "liveness_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "always-denies",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"Edit\", resource: Document::\"\"\ncontext: {hasPatientConsent: true, isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Role::\"ClinicalResearcher\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Role::\"PrincipalInvestigator\",\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n  Action::\"View\",\n  Action::\"Edit\",\n]\n",
+      "stderr": ""
+    },
+    {
+      "name": "added_auditor_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\auditor_floor.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"View\", resource: Document::\"\"\ncontext: {hasPatientConsent: true, isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  User::\"\" in [Role::\"ClinicalResearcher\", Role::\"GlobalAuditor\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"GlobalAuditor\",\n  },\n  Role::\"GlobalAuditor\",\n  Action::\"View\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Action::\"Edit\",\n  Role::\"ClinicalResearcher\",\n  Role::\"PrincipalInvestigator\",\n]\n",
+      "stderr": ""
+    },
+    {
+      "name": "repaired_added_auditor_view",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"View\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\auditor_floor.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\intended.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "added_auditor_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\auditor_floor.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"Edit\", resource: Document::\"\"\ncontext: {hasPatientConsent: true, isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Role::\"PrincipalInvestigator\",\n  Action::\"View\",\n  User::\"\" in [Role::\"ClinicalResearcher\", Role::\"GlobalAuditor\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"GlobalAuditor\",\n  },\n  Role::\"ClinicalResearcher\",\n  Action::\"Edit\",\n  Role::\"GlobalAuditor\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n]\n",
+      "stderr": ""
+    },
+    {
+      "name": "repaired_added_auditor_edit",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "symcc",
+        "--cvc5-path",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+        "--principal-type",
+        "User",
+        "--action",
+        "Action::\"Edit\"",
+        "--resource-type",
+        "Document",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--counterexample",
+        "implies",
+        "--policies1",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\auditor_floor.cedar",
+        "--policies2",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\intended.cedar"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "name": "witness_candidate",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "authorize",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\candidate.cedar",
+        "--entities",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\entities.json",
+        "--request-json",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\request.json"
+      ],
+      "returncode": 2,
+      "stdout": "\nDENY\n",
+      "stderr": ""
+    },
+    {
+      "name": "witness_intended",
+      "command": [
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+        "authorize",
+        "--schema",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_add_consent\\schema.cedarschema",
+        "--policies",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\intended.cedar",
+        "--entities",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\entities.json",
+        "--request-json",
+        "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-consent\\request.json"
+      ],
+      "returncode": 0,
+      "stdout": "\nALLOW\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Independent native CLI checks mapped from pinned plan; not an execution of AutoCedar synthesis or its Python harness."
+}
