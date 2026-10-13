@@ -1,0 +1,50 @@
+{
+  "commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "truncated": false,
+  "clinical_specifications": [
+    {
+      "path": "cedarbench/scenarios/clinical_add_consent/policy_spec.md",
+      "sha": "7c1225dcf1759418d094f0204209c961e2cb1d41"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_add_datamanager/policy_spec.md",
+      "sha": "746d43c4980d7335695fd4f1fd57aec45b7a4f9e"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_add_export/policy_spec.md",
+      "sha": "7be60eae11bd833b0cb409d41562f630c4d3eb8e"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_add_sponsor/policy_spec.md",
+      "sha": "7e5a812fd3b2915120b6a6993a58fa2dcb16adb9"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_add_study_phase/policy_spec.md",
+      "sha": "3ee3bbc104d5b5de4dcc64f835105f2db1e55c59"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_base/policy_spec.md",
+      "sha": "6b3ee8443f1541bad67bf077d859dce8b98079b3"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_dual_forbid/policy_spec.md",
+      "sha": "5b6b03d95b66c140cc45c93c03b0461d59e9cac7"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_full_expansion/policy_spec.md",
+      "sha": "7cd89d38a74dd03ac2f1d0dd9e42ab371047b7c0"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_relax_clearance/policy_spec.md",
+      "sha": "7b24e04bf6a9ee171041a8c3c49ee8ee0c9f57a5"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_remove_auditor/policy_spec.md",
+      "sha": "7a62388a3e97d3f7f4d69dcb232bd515a12258c6"
+    },
+    {
+      "path": "cedarbench/scenarios/clinical_temporal_embargo/policy_spec.md",
+      "sha": "29490d1bd205fed9e8c6806a16aa27deb13a9c80"
+    }
+  ]
+}

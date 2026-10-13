@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "counts": {
+    "original_checks": 149,
+    "positive_covered": 6,
+    "positive_omitted": 34,
+    "negative_control_probes": 4,
+    "equivalent_rewrites": 22,
+    "probe_validations": 44,
+    "probe_liveness": 44
+  },
+  "scope": "Independent parsing of existing native receipts and generated manuscript values; not independent requirement adjudication",
+  "source_sha256": "b8f8e0169466300181d028f71c3c58210b207cbd40c14217660fdcf043938b2a"
+}

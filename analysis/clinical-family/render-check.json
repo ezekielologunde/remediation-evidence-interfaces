@@ -1,0 +1,8 @@
+{
+  "pages": 4,
+  "normalization": "none",
+  "status": "passed",
+  "comparison": "SHA-256 equality of rendered PNGs at scale-to 1400",
+  "source": "paper/main.pdf",
+  "rebuilt": "clean-extracted Overleaf main.pdf"
+}
