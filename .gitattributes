@@ -1,0 +1,2 @@
+# Preserve audited policy bytes across Windows and Unix checkouts.
+*.cedar -text
