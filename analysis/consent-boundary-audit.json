@@ -1,0 +1,27 @@
+{
+  "scope": "Boolean abstraction only; native Cedar verification pending",
+  "upstream_commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "scenario": "clinical_add_consent",
+  "valuations": 2048,
+  "boundary_violations": 0,
+  "liveness": {
+    "View": true,
+    "Edit": true
+  },
+  "spec_allow_candidate_deny_valuations": 45,
+  "added_auditor_floor_rejections": 45,
+  "example": {
+    "action": "View",
+    "active": true,
+    "cr": false,
+    "pi": true,
+    "auditor": true,
+    "clearance_ok": false,
+    "classification_ok": false,
+    "risk_ok": true,
+    "device_ok": true,
+    "same_dept": false,
+    "consent": false
+  },
+  "interpretation": "Coverage counterexample, not empirical prevalence or novelty proof"
+}

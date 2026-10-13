@@ -1,5 +1,7 @@
 # Evidence-age interfaces for remediation approval
 
+Latest finding: a [pinned CedarBench auditor-access coverage counterexample](protocol/consent-boundary-finding.md). The independent Boolean audit checks 2,048 valuations and identifies 45 specification-permitted denials that the modeled original checks accept. An added auditor floor catches all 45. Native Cedar verification and research novelty remain pending. Reproduce with `python src/audit_consent_boundary.py`.
+
 **Status: Broad repair-generalization candidate rejected after full-text overlap review; narrower preservation question unverified.** See [October 13 literature gate](protocol/literature-gate-2026-10-13.md). The human-study proposal remains on hold. An original finite-domain policy-repair audit and ten passing tests are available. Hand-authored fixtures demonstrate measurement only, not AI performance or a new discovery. See [results and research decision](protocol/repair-feasibility-result-2026-10-09.md). Run `python -m unittest discover -s tests -v` and `python src/repair_audit.py`.
 
 [Research protocol and prior-art leads](protocol/research-plan.md). This plan comes from the October 4, 2026 independent research portfolio. Its literature assessment must be refreshed before implementation and submission.
