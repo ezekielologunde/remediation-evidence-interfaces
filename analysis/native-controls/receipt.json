@@ -1,0 +1,797 @@
+{
+  "commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "scope": "Exploratory related-scenario controls, not independent prevalence samples",
+  "results": [
+    {
+      "scenario": "clinical_base",
+      "manifest": [
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/schema.cedarschema",
+          "sha256": "5b19fb7ded0f92f8107d4b4f40e6ea7a3db3a0458c0174aef1832a28f5df3b5e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/policy_spec.md",
+          "sha256": "7f809542c0b10975196637e84e69ed59a49b73e44218c64ce41e6667c8680fa8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/verification_plan.py",
+          "sha256": "757d17c31cb3d884c97d3845d1f56361fdc438becbd4008b414060217e2bae57"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_view.cedar",
+          "sha256": "2c25a1c524b907a701cd523b49a6a0a24abd8ad97a817ff102007281ceeb2728"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_edit.cedar",
+          "sha256": "8e004b53dcf065fa8a117806582419b5994f666d9bb3ab6943417482ec506147"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_view_dept.cedar",
+          "sha256": "3fbcae9dbdc8a5f2b997cadfe2ea99c26046ad021abb051ab46dbe789861941a"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_edit_dept.cedar",
+          "sha256": "83c18d0149ecb5eba79edeb94d174ab04348d7dfa1fd154d56f66404c40dce50"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_view_active.cedar",
+          "sha256": "41ad93c234b974169fc911759ec165a78106d5dc617aee6362e824784105858b"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/ceiling_edit_active.cedar",
+          "sha256": "6394015830019b0a0ad743ecf929d1c0f72e40d69e43bb5973666dfa7d5c2d79"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/floor_cr_view.cedar",
+          "sha256": "c4d58d03c763f31f544edf38268c12e4abf3ad4558f2a68028bdc12678485b88"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/floor_cr_edit.cedar",
+          "sha256": "bfb2eedd87c34f321c5c556d283aa071928cee4a385aafecd8da32f3cc62006d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/floor_pi_view.cedar",
+          "sha256": "b3129554dfeee7d8dc6e38f99352c9645a7206240a19173798bc0acfafac6a95"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/floor_pi_edit.cedar",
+          "sha256": "6bec90f3feca675073b2df7393a697fad8bb9e13dacea95414be86fbaa304bbd"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_base/references/floor_auditor_cross_dept_view.cedar",
+          "sha256": "c21bb6398b93763562815d27feb24a6dac6a90a6406491fa3de76d636cf1fb69"
+        }
+      ],
+      "validation": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+      "checks": [
+        {
+          "name": "view_safety_ceiling",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_view.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "edit_safety_ceiling",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_edit.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "cross_department_deny_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_view_dept.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "cross_department_deny_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_edit_dept.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "inactive_project_deny_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_view_active.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "inactive_project_deny_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\ceiling_edit_active.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "floor_cr_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\floor_cr_view.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "floor_cr_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\floor_cr_edit.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "floor_pi_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\floor_pi_view.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "floor_pi_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\floor_pi_edit.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "floor_auditor_cross_dept_view",
+          "passed": false,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\references\\floor_auditor_cross_dept_view.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"View\", resource: Document::\"\"\ncontext: {isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Role::\"ClinicalResearcher\",\n  Role::\"GlobalAuditor\",\n  Role::\"PrincipalInvestigator\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  User::\"\" in [Role::\"ClinicalResearcher\", Role::\"GlobalAuditor\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"PrincipalInvestigator\",\n  },\n  Action::\"View\",\n  Action::\"Edit\",\n]\n",
+          "stderr": ""
+        },
+        {
+          "name": "liveness_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "always-denies",
+            "--policies",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"View\", resource: Document::\"\"\ncontext: {isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Role::\"ClinicalResearcher\",\n  Action::\"Edit\",\n  Action::\"View\",\n  Role::\"PrincipalInvestigator\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n]\n",
+          "stderr": ""
+        },
+        {
+          "name": "liveness_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_base\\schema.cedarschema",
+            "--counterexample",
+            "always-denies",
+            "--policies",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_base.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"Edit\", resource: Document::\"\"\ncontext: {isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n  Action::\"Edit\",\n  Action::\"View\",\n  Role::\"ClinicalResearcher\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Role::\"PrincipalInvestigator\",\n]\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "scenario": "clinical_remove_auditor",
+      "manifest": [
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/schema.cedarschema",
+          "sha256": "aa331763fd2e78f3c7f4cc9a2f01789a4dd75e9a33576a4c20fce980cf3e0880"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/policy_spec.md",
+          "sha256": "4791e66f0dcca59d5925049bc5f6ffd051e41e37c0143639e4ccb682ffa4f3a4"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/verification_plan.py",
+          "sha256": "50afdf7dc210a5226eb547a259e25075a34f15dfcc7bc045a6ab880cdc9cb878"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_view.cedar",
+          "sha256": "2f03b706aa93c30797544ffa131b36bc190bd94c8ccc61aa6f367d13cd88dd35"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_edit.cedar",
+          "sha256": "f54ad2c57e9fad8fdf9b15c2df2cf230a10bfa149cce05ebb9a109f4ff7a0141"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_dept_match_view.cedar",
+          "sha256": "67aff8ba99ab06a5879b26bc6c74c6dcaf32ecccf19d52d2792b181517c705c3"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_dept_match_edit.cedar",
+          "sha256": "37343eb1409ee8786f47c47f60a52cdb121eabc35b2692e6b5a46626228649ab"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_active_view.cedar",
+          "sha256": "41ad93c234b974169fc911759ec165a78106d5dc617aee6362e824784105858b"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/ceiling_active_edit.cedar",
+          "sha256": "6394015830019b0a0ad743ecf929d1c0f72e40d69e43bb5973666dfa7d5c2d79"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/floor_researcher_view.cedar",
+          "sha256": "c4d58d03c763f31f544edf38268c12e4abf3ad4558f2a68028bdc12678485b88"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/floor_researcher_edit.cedar",
+          "sha256": "bfb2eedd87c34f321c5c556d283aa071928cee4a385aafecd8da32f3cc62006d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/floor_pi_view.cedar",
+          "sha256": "b3129554dfeee7d8dc6e38f99352c9645a7206240a19173798bc0acfafac6a95"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neselab/cedar-synthesis-engine/0201565abf5993e258764d3f0ef83a59d3b4962e/cedarbench/scenarios/clinical_remove_auditor/references/floor_pi_edit.cedar",
+          "sha256": "6bec90f3feca675073b2df7393a697fad8bb9e13dacea95414be86fbaa304bbd"
+        }
+      ],
+      "validation": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+      "checks": [
+        {
+          "name": "view_safety_ceiling",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_view.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "edit_safety_ceiling",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_edit.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "cross_department_block_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_dept_match_view.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "cross_department_block_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_dept_match_edit.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "active_project_gate_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_active_view.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "active_project_gate_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\ceiling_active_edit.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "researcher_view_floor",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\floor_researcher_view.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "researcher_edit_floor",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\floor_researcher_edit.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "pi_view_floor",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\floor_pi_view.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "pi_edit_floor",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "implies",
+            "--policies1",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\references\\floor_pi_edit.cedar",
+            "--policies2",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+          "stderr": ""
+        },
+        {
+          "name": "liveness_view",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"View\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "always-denies",
+            "--policies",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"View\", resource: Document::\"\"\ncontext: {isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Action::\"Edit\",\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n  Action::\"View\",\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Role::\"ClinicalResearcher\",\n  Role::\"PrincipalInvestigator\",\n]\n",
+          "stderr": ""
+        },
+        {
+          "name": "liveness_edit",
+          "passed": true,
+          "command": [
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cedar\\cedar-policy-cli-experimental-x86_64-pc-windows-msvc\\cedar.exe",
+            "symcc",
+            "--cvc5-path",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.local-tools\\cvc5\\cvc5-Win64-x86_64-static\\bin\\cvc5.exe",
+            "--principal-type",
+            "User",
+            "--action",
+            "Action::\"Edit\"",
+            "--resource-type",
+            "Document",
+            "--schema",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\.native-cache\\clinical_remove_auditor\\schema.cedarschema",
+            "--counterexample",
+            "always-denies",
+            "--policies",
+            "C:\\Users\\WT8\\Projects\\remediation-evidence-interfaces\\analysis\\native-controls\\clinical_remove_auditor.cedar"
+          ],
+          "returncode": 0,
+          "stdout": "\u2717 Policy set always denies: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"Edit\", resource: Document::\"\"\ncontext: {isCompliantDevice: true, networkRiskScore: -1}\nentities: [\n  Action::\"View\",\n  Action::\"Edit\",\n  Role::\"ClinicalResearcher\",\n  User::\"\" in [Role::\"ClinicalResearcher\"] {\n    clearanceLevel: 9223372036854775807,\n    department: \"\",\n  },\n  Document::\"\" {\n    classification: \"\",\n    projectManagingDepartment: \"\",\n    projectStatus: \"Active\",\n  },\n  Role::\"PrincipalInvestigator\",\n]\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

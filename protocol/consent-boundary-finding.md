@@ -56,6 +56,20 @@ The pinned AutoCedar README also exposes source-to-property provenance and a cov
 
 ## Research decision
 
+### Follow-up: related-scenario controls
+
+Ran `python src/native_consent_controls.py` with the same native tools. This exploratory check selected the clinical base and explicit auditor-removal variant to discriminate a missing exception check from intentional denial. Selection followed the initial finding and is not a preregistered prevalence study. Plans are parsed through a restricted AST decoder, not executed. Each uses its own pinned schema and all of its original checks. The candidate removes the consent condition because neither control requires it.
+
+| Scenario | Original checks satisfied | Interpretation |
+|---|---|---|
+| clinical_base | 12/13 | Auditor View floor correctly rejects the candidate |
+| clinical_add_consent | 11/11 | Same-department-only candidate escapes all original checks |
+| clinical_remove_auditor | 12/12 | Denial is intentional under this variant's written requirements |
+
+Receipts: `analysis/native-controls/receipt.json`; original candidate policies are stored alongside it. This provides a sharper diagnosis: an auditor View obligation present in the base plan is absent in the consent variant even though the exception remains in its requirements. The explicit-removal control confirms why missing exception coverage must be interpreted against the scenario's requirements. These are related artifacts, not three independent benchmark samples; no prevalence or statistical claim follows. We have not established the historical process that produced the omission or its effect on any published model score.
+
+Potential next study question: do benchmark requirement mutations preserve formal obligations for unchanged requirements? This remains a candidate empirical contribution. The present finding supports feasibility and a concrete example, not a novel method. Compare against mutation testing and regression-specification research before broadening; require obligation-level traceability, intentional-change controls, equivalent-policy controls and a frozen sampling plan.
+
 This is a tangible verification-target coverage finding in one pinned scenario, not proof of a novel research contribution. AutoCedar already acknowledges that formal validity depends on approved intent. Do not frame this as refuting formal verification or discovering that specifications can be incomplete.
 
 Decision after native confirmation: retain this as a reproducible benchmark-quality finding. Do not yet launch a larger model study or write a publication-ready manuscript. The remaining candidate is a narrowly scoped empirical audit of direction-specific obligation omissions in AI policy benchmarks, with independent requirement adjudication and controls for intended underspecification. Its novelty is unresolved. A broader study must first distinguish that contribution from existing mutation testing and source-coverage methods, then freeze task selection, mutation operators and rejection criteria. No HPC allocation is justified by this single case.
