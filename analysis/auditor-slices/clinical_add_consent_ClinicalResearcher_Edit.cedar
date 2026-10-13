@@ -1,0 +1,1 @@
+permit(principal is User, action == Action::"Edit", resource is Document) when { resource.projectStatus == "Active" && principal in Role::"ClinicalResearcher" && principal in Role::"GlobalAuditor" && principal.department != resource.projectManagingDepartment && principal.clearanceLevel > 3 && resource.classification != "HighlyRestricted" && context.hasPatientConsent };

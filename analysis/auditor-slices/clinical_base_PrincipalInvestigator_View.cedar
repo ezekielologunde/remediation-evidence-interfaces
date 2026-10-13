@@ -1,0 +1,1 @@
+permit(principal is User, action == Action::"View", resource is Document) when { resource.projectStatus == "Active" && principal in Role::"PrincipalInvestigator" && principal in Role::"GlobalAuditor" && principal.department != resource.projectManagingDepartment && context.networkRiskScore < 20 && context.isCompliantDevice };
