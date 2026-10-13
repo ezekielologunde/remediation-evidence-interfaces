@@ -1,0 +1,15 @@
+{
+  "status": "Frozen before full-family solver runs, after exploratory inspection of three scenarios and all requirements",
+  "upstream_commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "scenarios": ["clinical_base", "clinical_add_consent", "clinical_add_datamanager", "clinical_add_export", "clinical_add_sponsor", "clinical_add_study_phase", "clinical_dual_forbid", "clinical_full_expansion", "clinical_relax_clearance", "clinical_remove_auditor", "clinical_temporal_embargo"],
+  "scope": "Clinical family only. Four original-role auditor slices per scenario. Additional roles and Export excluded from probe claims, but their original checks retained.",
+  "candidate": "Union of original floors; must validate and satisfy every original check before being used as an accepted counterexample",
+  "roles": ["ClinicalResearcher", "PrincipalInvestigator"],
+  "actions": ["View", "Edit"],
+  "probe_rules": ["Active project", "Cross-department and GlobalAuditor membership", "Exclude the other original role, DataManager and SponsorRepresentative to avoid multi-role ambiguity", "Original role-specific qualification", "Clearance >=3 only in relax_clearance", "Consent required for Edit in add_consent and full_expansion", "CR restricted to non-Phase-3 in add_study_phase and full_expansion", "CR past embargo in temporal_embargo"],
+  "control": "remove_auditor is intentional denial, reported separately; never count as omitted positive obligation",
+  "outcomes": ["covered", "accepted_candidate_omission", "candidate_rejected", "tool_error", "intentional_denial_control"],
+  "interpretation": "Exploratory descriptive case study, no benchmark-wide prevalence, no independent-task inference, no new algorithm claim",
+  "repair": "Add scenario-adjusted probes as floors; validate augmented candidate and rerun all original checks; check equivalent policy order rewrite",
+  "rejection": "Any failed original check invalidates use of that candidate as a plan-accepted omission witness"
+}
