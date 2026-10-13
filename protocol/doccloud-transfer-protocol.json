@@ -1,0 +1,11 @@
+{
+  "scope": "Exploratory transfer to doccloud_base only, chosen after inspecting its requirements and plan; not a full second-family audit",
+  "upstream_commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "question": "Do original acceptance checks require non-owner ACL ViewDocument and ModifyDocument access?",
+  "construction": "Use the pinned released candidate as baseline, then append a forbid for non-owner User ViewDocument and ModifyDocument requests on Document resources.",
+  "probes": "Authenticated, non-owner, non-private User, no mutual blocking, membership in the respective viewACL or modifyACL",
+  "acceptance": "Both policies must validate and run all original checks; only an accepted narrowed policy supports the adequacy claim",
+  "controls": "Baseline probe coverage and probe nonemptiness. No Public-principal claim because the prose and global authentication gate need separate interpretation.",
+  "rejection": "Report rejection if any original obligation fails; do not alter the narrowing to rescue the result",
+  "provenance": "Released workspace is not asserted to be the unavailable final inspected repair-pass output"
+}

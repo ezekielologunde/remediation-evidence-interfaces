@@ -9,3 +9,13 @@ The full Hwang et al. ASE 2012 paper was retrieved from https://orbilu.uni.lu/bi
 The manuscript is a technical case-study preprint candidate. A full journal novelty claim remains unsupported. Independent interpretation review, other-family evidence and exact original-toolchain reproduction are limitations, not results to invent. No ResearchGate upload, journal submission, or upstream issue report was performed as part of this release.
 
 Artifacts: `analysis/clinical-family/receipt.json`, `protocol/clinical-inventory-protocol.json`, `src/clinical_family_audit.py`, and `paper/main.tex`. Verification separately re-parses raw verdict text and compares table/plot values. The proof method and requirement interpretation are not independently reimplemented by that verifier.
+
+## Released-output and transfer follow-up
+
+The fixed released-output protocol reused all probes unchanged. All workspace schemas, specifications, plans and references match the original audited inputs by SHA-256. All 11 available clinical policies pass 149 original checks and cover all 40 positive probes. Four removal controls retain counterexamples. This negative finding must remain in the paper.
+
+The run summary identifies an unavailable `repair_pass_20260630` directory as final inspected workspaces. Available candidates are not asserted to be final paper outputs.
+
+An exploratory doccloud_base transfer case uses a released baseline plus an explicit non-owner View/Modify forbid. Both validate and pass all 43 original checks. Two ACL probes validate and are nonempty; baseline covers both, narrowed candidate omits both. This is one transfer case, not a full second-family audit.
+
+Release scope: completed technical preprint package with 5 pages, 2 tables and 2 diagrams, updated abstract, methods, results, threats and conclusion. No actual released-output omission was found. A strong journal novelty claim remains unestablished; further experiments should answer a new scoped question rather than seek a preferred outcome. Native receipts are in analysis/released-clinical and analysis/doccloud-transfer. Final inspected upstream outputs and independent requirement interpretation remain unavailable. No external preprint upload or submission occurred.

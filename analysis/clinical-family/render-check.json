@@ -1,8 +1,32 @@
 {
-  "pages": 4,
-  "normalization": "none",
-  "status": "passed",
-  "comparison": "SHA-256 equality of rendered PNGs at scale-to 1400",
-  "source": "paper/main.pdf",
-  "rebuilt": "clean-extracted Overleaf main.pdf"
+  "source_sha256": "5c9830148b970474cb99868639005b496865d6439fcdc517d97cf9bb006099a1",
+  "pdf_sha256": "bf9327b9c1395ff50927d368079ee9edec595dc95aa113ca41f7f268484881a3",
+  "pages_visually_reviewed": 5,
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "d03e435d575cc730352fb48d2fb34cafb58dd23847924fe1510e6802a549e074",
+      "rebuilt_identical": true
+    },
+    {
+      "page": 2,
+      "sha256": "01f853239a52db83dc6050042090eea0a8e50274b4519e5174e350365e885540",
+      "rebuilt_identical": true
+    },
+    {
+      "page": 3,
+      "sha256": "9ece583f416dc7aaf85aabfe02d6cd6435614d8ecd9c58d665bdec30a88f9f74",
+      "rebuilt_identical": true
+    },
+    {
+      "page": 4,
+      "sha256": "53a799083d2d24eb8764a7e8f170bb1d8d685d0fa5db2ab0bb59170258335ee6",
+      "rebuilt_identical": true
+    },
+    {
+      "page": 5,
+      "sha256": "dab8941e88a650042020bbf14595fb51bbff14c443896ccab959e4753ecc9e4d",
+      "rebuilt_identical": true
+    }
+  ]
 }

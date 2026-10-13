@@ -1,0 +1,1 @@
+permit(principal is User, action == Action::"ModifyDocument", resource is Document) when { context.is_authenticated && principal != resource.owner && !resource.isPrivate && principal in resource.modifyACL && !principal.blocked.contains(resource.owner) && !resource.owner.blocked.contains(principal) };

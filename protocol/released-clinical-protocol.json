@@ -1,0 +1,12 @@
+{
+  "status": "Fixed before reading released clinical candidates or running their checks",
+  "upstream_commit": "0201565abf5993e258764d3f0ef83a59d3b4962e",
+  "run": "experiments/cedarbench_aitl_fast/cedarbench-aitl-fast-gpt55-low-20260630",
+  "selection": "All 11 clinical scenarios from the existing frozen family inventory",
+  "probes": "Reuse the existing four probes per scenario without modification",
+  "alignment": "Hash compare workspace schema, specification, plan and every plan reference against the audited benchmark inputs. Stop classification for a mismatched scenario.",
+  "checks": "Validate released candidate, rerun every original check, then check four probe implications",
+  "interpretation": "Only classify an accepted-candidate omission if input alignment, validation and all original checks pass. Keep removal controls separate. Report complete coverage as a negative result for actual-output omissions.",
+  "provenance_limit": "Run SUMMARY.md points to ../repair_pass_20260630/ as final inspected workspaces. That directory is absent from the pinned tree. Available workspace outputs are not asserted to be final paper outputs.",
+  "no_new_model_run": true
+}

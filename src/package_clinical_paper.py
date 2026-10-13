@@ -30,6 +30,13 @@ def main():
     shutil.copy2(ROOT/'protocol/clinical-inventory-protocol.json', verify/'protocol/clinical-inventory-protocol.json')
     shutil.copytree(ROOT/'analysis/clinical-family', verify/'analysis/clinical-family')
     shutil.copytree(ROOT/'analysis/native-consent', verify/'analysis/native-consent')
+    for name in ['released_clinical_audit.py', 'doccloud_transfer_audit.py', 'verify_followup_release.py']:
+        shutil.copy2(ROOT/'src'/name, verify/'src'/name)
+    for name in ['released-clinical-protocol.json', 'doccloud-transfer-protocol.json']:
+        shutil.copy2(ROOT/'protocol'/name, verify/'protocol'/name)
+    for name in ['released-clinical', 'doccloud-transfer']:
+        shutil.copytree(ROOT/'analysis'/name, verify/'analysis'/name)
+    followup = json.loads(run([sys.executable, verify/'src/verify_followup_release.py', verify, stage/'main.tex']).stdout)
     checked = json.loads(run([sys.executable, verify/'src/verify_clinical_release.py', '--source', stage/'main.tex', '--receipt', verify/'analysis/clinical-family/receipt.json']).stdout)
     (stage/'README.md').write_text('''# Auditor obligation audit
 
@@ -61,13 +68,19 @@ verification/analysis/clinical-family/. Original work is unlicensed pending the
 author's decision. This archive excludes downloaded papers and tool binaries.
 The family is a selected, related set. The 34 omitted probes are logical slices,
 not 34 independent tasks, actual model mistakes or a population failure rate.
+Available released clinical outputs cover all 40 positive probes. Their summary
+points to an unavailable final inspected directory; final paper outputs are not
+asserted. The document-sharing transfer is one base case with two probes.
+Run python verification/src/verify_followup_release.py verification main.tex
+to check follow-up values and hashes. Native follow-ups can be rerun after the
+clinical audit with released_clinical_audit.py and doccloud_transfer_audit.py.
 ''', encoding='utf-8')
     log = (cache/'compile-final.log').read_text(encoding='utf-8-sig')
     final = log.rsplit('note: Rerunning TeX', 1)[-1]
     issues = re.findall(r'Overfull|undefined (?:references|citations)|Missing character|^error:', final, re.M)
     assert not issues, issues
     validation = {'status': 'built-and-data-checked', 'scientific_status': 'case-study preprint candidate; novelty priority and independent interpretation unverified',
-        'checks': checked, 'visual_pages_reviewed': 4, 'tables_reviewed': 1, 'figures_reviewed': 2,
+        'checks': checked, 'followup_checks': followup, 'visual_pages_reviewed': 5, 'tables_reviewed': 2, 'figures_reviewed': 2,
         'final_pass_errors_overfull_undefined_missing_glyphs': 0,
         'compiler': 'Tectonic 0.17.0 / XeTeX 0.999994 / acmart 1.83',
         'built_in_compiler': 'unavailable: Windows sandbox helper setup failure',

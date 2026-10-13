@@ -8,13 +8,13 @@
 \setlength{\emergencystretch}{2em}
 \raggedbottom
 \renewcommand\footnotetextcopyrightpermission[1]{}
-\title{Passing the Plan, Missing the Exception: A Native Audit of Auditor Obligations in a CedarBench Clinical Family}
+\title{Passing the Plan, Missing the Exception: A Native Audit of Positive Obligations in CedarBench}
 \author{Ezekiel Ologunde}
 \affiliation{\institution{Independent Researcher}\city{Boston}\state{MA}\country{USA}}
 \email{ologunde@bu.edu}
 \begin{document}
 \begin{abstract}
-Formal verification establishes conformance to encoded obligations, which need not exhaust the permissions described in accompanying requirements. We investigate this distinction in a pinned public CedarBench clinical family. For each of 11 scenarios, we construct a policy from the union of its published positive reference policies, validate it, and check every original acceptance obligation using native Cedar and CVC5. All 149 original checks pass. We then test four role/action slices of cross-department auditor access per scenario, accounting for consent, phase, clearance and embargo changes. Among 40 slices in the ten scenarios retaining the exception, six are covered and 34 admit a counterexample: the accepted candidate denies access required by our reading of the written requirements. Four slices in an explicit exception-removal scenario serve as intentional-denial controls. Adding the adjusted probes preserves all original checks in the ten exception-retaining scenarios; applying the same operation to the removal control violates four original checks. These are descriptive results from one related family, not an estimate of benchmark-wide prevalence or measured model errors. We contribute a reproducible case study and concrete adequacy witnesses, not a new verification algorithm. Independent requirement adjudication, exact original-toolchain reproduction and external-family validation remain open.
+Formal verification establishes conformance to encoded obligations, which need not exhaust the permissions described in accompanying requirements. We investigate this distinction in a pinned public CedarBench clinical family. For each of 11 scenarios, we construct a policy from the union of its published positive reference policies, validate it, and check every original acceptance obligation using native Cedar and CVC5. All 149 original checks pass. We then test four role/action slices of cross-department auditor access per scenario, accounting for consent, phase, clearance and embargo changes. Among 40 slices in the ten scenarios retaining the exception, six are covered and 34 admit a counterexample: the accepted candidate denies access required by our reading of the written requirements. Four slices in an explicit exception-removal scenario serve as intentional-denial controls. Adding the adjusted probes preserves all original checks in the ten exception-retaining scenarios; applying the same operation to the removal control violates four original checks. These are descriptive results from one related family, not an estimate of benchmark-wide prevalence or measured model errors. We contribute a reproducible case study and concrete adequacy witnesses, not a new verification algorithm. A follow-up audit of available released clinical policies covers all 40 positive probes, so the constructed omissions are not observed output failures. A document-sharing transfer case likewise accepts a deliberately narrowed policy while its released baseline covers both tested sharing obligations. Independent requirement adjudication and exact original-toolchain reproduction remain open.
 \end{abstract}
 \keywords{authorization, Cedar, specification adequacy, benchmark auditing, access control}
 \maketitle
@@ -22,7 +22,7 @@ Formal verification establishes conformance to encoded obligations, which need n
 \section{Introduction}
 An authorization policy may satisfy every property in an acceptance plan while denying a workflow that the prose says should be permitted. This is not a contradiction in formal verification: the checked properties and the intended requirements are different objects. The practical question is whether a benchmark's properties are strong enough to reject a particular omission.
 
-AutoCedar synthesizes Cedar policies against reviewed semantic boundaries and explicitly includes human review of intent~\cite{autocedar}. This study examines public benchmark artifacts associated with that work. It does not rerun synthesis, evaluate a language model or dispute the validity of a proof relative to its premises. Instead, it constructs policies accepted by the published boundaries and asks whether they omit a narrowly defined exception.
+AutoCedar synthesizes Cedar policies against reviewed semantic boundaries and explicitly includes human review of intent~\cite{autocedar}. This study examines public benchmark artifacts associated with that work. It does not rerun synthesis or dispute the validity of a proof relative to its premises. It also checks available released policies, with an explicit limit on their relationship to final inspected outputs. Instead, it constructs policies accepted by the published boundaries and asks whether they omit a narrowly defined exception.
 
 The motivating example concerns an active clinical project. A qualified PrincipalInvestigator who also belongs to GlobalAuditor may cross department boundaries. The consent variant adds a consent condition for Edit while leaving View unaffected. A candidate that retains only same-department permissions can satisfy the variant's original checks. A schema-valid View request then receives Deny even though the auditor exception supports Allow. This concrete request was confirmed with the native evaluator, independently of the subsequent family audit.
 
@@ -42,7 +42,7 @@ RQ1 asks whether a policy satisfying every original check can omit qualified cro
 
 The inventory contains all 11 top-level clinical scenarios identified in the pinned repository tree. It is a complete inventory of that named family, not a random sample of CedarBench. The family was chosen after an exploratory consent-scenario finding. Three scenarios and their initial findings were already inspected before the full-family protocol was frozen. All scenario requirements were read before the remaining solver runs. The protocol is therefore prospective for those runs, but the overall investigation is exploratory.
 
-We restrict probes to the original ClinicalResearcher and PrincipalInvestigator roles and View/Edit actions. Added DataManager, SponsorRepresentative and Export behavior is outside our positive-probe claims, although all original checks involving those features remain in the acceptance test. We analyze four slices per scenario, not every requirement.
+We restrict probes to the original ClinicalResearcher and PrincipalInvestigator roles and View/Edit actions. Added DataManager, SponsorRepresentative and Export behavior is outside our positive-probe claims, although all original checks involving those features remain in the acceptance test. We analyze four slices per scenario, not every requirement. Two follow-ups distinguish plan adequacy from observed output behavior: an audit of all available released clinical candidates using unchanged probes, and an exploratory two-slice transfer check in doccloud\_base. The latter is one case, not a full second-family inventory.
 
 \section{Method}
 \subsection{Inputs and provenance}
@@ -84,6 +84,13 @@ Each probe is schema-validated and checked for satisfiability through a non-deny
 We add the adjusted probes to each floor-union candidate and rerun all original checks. This tests compatibility with the stored constraints; adding a probe does not independently validate its natural-language interpretation. In the removal control the addition should be rejected. We also reverse floor-policy order and test semantic equivalence for View and Edit.
 
 Cedar's symbolic command can return process success for both a verified property and a counterexample. The audit therefore parses the formal verdict instead of treating a zero exit code as a proof. Timeouts and unknown outputs are retained as tool errors. We report descriptive counts only. Related variants and individual requests are not independent observations, so no confidence interval, significance test or population estimate is computed.
+
+\subsection{Released outputs and transfer check}
+Before reading the released clinical candidates, we fixed a follow-up protocol covering all 11 scenarios and reusing the existing probes unchanged. The available run is named \nolinkurl{cedarbench-aitl-fast-gpt55-low-20260630}. Each workspace schema, specification, plan and referenced policy is hash-compared with the previously audited input before classification. All comparisons match. We validate each candidate and rerun its complete original plan before testing the probes.
+
+The run summary points to a later \texttt{repair\_pass\_20260630} directory as the final inspected workspaces. That directory is absent from the pinned repository tree. We therefore describe these as available released workspace policies, not verified final paper outputs or a model error-rate sample. We do not infer authorship details from the directory name.
+
+After reading the document-sharing base specification and plan, we fixed a separate exploratory transfer protocol. We append to its released candidate a forbid for non-owner User requests to ViewDocument or ModifyDocument. Two probes require authentication, a non-private document, the respective ACL membership, no mutual blocking and non-ownership. We check both candidates against all original obligations and test probe validity, nonemptiness and implication. Public-principal semantics and other document-sharing variants are excluded. This test uses an explicit narrowing, rather than the clinical floor-union construction.
 
 \section{Results}
 Table~\ref{tab:results} is generated from the raw receipt. All 11 candidates validate and satisfy their original plans, totaling 149 checks. All 44 probes validate and are nonempty. The ten exception-retaining scenarios contain 40 positive probes: six are covered and 34 have an accepted-candidate counterexample. All ten contain at least one such omission. The removal scenario contributes four intentional-denial controls, excluded from that denominator.
@@ -131,32 +138,50 @@ nodes near coords,bar width=22pt,enlarge x limits=.7]
 
 The original concrete witness provides an additional evaluator check. A PI plus GlobalAuditor, in a different department, with low risk and a compliant device, requests View on an active project. The deficient consent candidate denies and the interpreted target allows, with schema-based request validation enabled. That request demonstrates realizability of the motivating example; it is not a replay of every symbolic witness from the family audit.
 
+\subsection{Available released policies and transfer result}
+All 11 available clinical candidates validate and pass all 149 original checks. All 40 positive auditor probes are covered. The four removal-control probes retain counterexamples as expected. Thus the audit finds no omission among these released clinical outputs on the fixed slices. This does not erase the plan-adequacy witnesses; it rules out interpreting them as observed failures of these policies.
+
+In doccloud\_base, both the released policy and its narrowed version validate and pass all 43 original checks. Both ACL probes are valid and nonempty. The released policy covers both; the narrowed policy admits counterexamples for both. Owner access keeps the User actions live even when non-owner sharing is blocked. Table~\ref{tab:followup} summarizes the contrast. The transfer supports the existence of another acceptance gap, not its prevalence throughout document-sharing scenarios.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Fixed follow-up probes. Counts concern positive obligations only. Constructed policies are distinguished from released outputs.}
+\label{tab:followup}
+\begin{tabular}{lrrr}
+\toprule Candidate set & Checks & Covered & Omitted\\\midrule
+Clinical released (11) & 149/149 & 40 & 0 \\
+Doccloud released (1) & 43/43 & 2 & 0 \\
+Doccloud narrowed (1) & 43/43 & 0 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Discussion}
 The distinction between a necessary condition and a required permission is decisive. A ceiling permitting auditor access merely allows a candidate to grant it. It does not require the grant. Similarly, an action can be live because of same-department requests while the cross-department workflow remains unavailable. A role/action coverage table can expose this mismatch more clearly than an undifferentiated count of successful checks.
 
 The base-to-consent comparison gives a concrete artifact relationship: a positive auditor View obligation present in the base plan is absent in the consent plan, while the prose retains the exception. We do not establish the historical process that caused this difference. Other variants add or narrow behavior, so mechanically copying all base obligations would be unsound. The failing removal control demonstrates that adding access indiscriminately is not a valid repair strategy.
 
-The findings do not invalidate AutoCedar's statement of convergence against its formal targets. We have not inspected the actual generated policies for these cases. A model could produce the intended auditor behavior despite an incomplete acceptance plan. Conversely, a plan-level pass alone is insufficient evidence for that behavior. Future re-evaluation should report target adequacy and candidate conformance separately.
+The findings do not invalidate AutoCedar's statement of convergence against its formal targets. The available released policies cover all fixed positive probes, despite the demonstrated acceptance gaps. Their relationship to the unavailable final inspected outputs remains unverified. A plan-level pass alone is insufficient evidence for those permissions, but the direct probe results supply that evidence for these available policies. Future re-evaluation should report target adequacy and candidate conformance separately.
 
 For benchmark maintenance, the useful artifact is a trace from each unchanged or narrowed requirement to an explicit positive or negative obligation, supported by a realizable witness or counterexample. This is an application of established testing ideas. Our empirical observation is the demonstrated gap in the pinned clinical family, not a claim that traceability, symbolic implication or regression checking is new.
 
 \section{Threats to Validity}
 \textbf{Interpretation.} Requirements were interpreted using AI tooling without independent human adjudication. Some prose uses necessary-condition language. We rely on the explicit auditor exception together with the stated role access paths, and restrict probes to avoid mixed-role ambiguity. Alternative intended underspecification could change the classification from defect to documentation mismatch. The native implication results remain true regardless of that interpretation.
 
-\textbf{Selection and dependence.} The family was chosen after discovery of an omission, and several cases informed protocol design. A fixed inventory limits further cherry-picking but does not remove that selection bias. The related scenarios cannot establish general prevalence. New roles, Export probes, other requirement classes and other benchmark families are excluded.
+\textbf{Selection and dependence.} The family was chosen after discovery of an omission, and several cases informed protocol design. A fixed inventory limits further cherry-picking but does not remove that selection bias. The related scenarios cannot establish general prevalence. New roles, Export probes and most other requirement classes are excluded. The single document-sharing transfer case does not constitute a systematic external-family validation.
 
 \textbf{Implementation.} The probe generator and interpretation share assumptions. Native validation, complete-plan checks, negative controls, policy-order equivalence and an independent receipt checker reduce some implementation risks but do not prove the audit software correct. Exact Cedar 4.10.0 reproduction and a second solver are not available in this release.
 
-\textbf{Ecological validity.} There are no real patient records, deployed systems, human participants, user outcomes or model-performance measurements. The candidate is constructed to challenge the plan, not to imitate a likely model output. Consequently, no operational harm rate or AI failure rate is claimed.
+\textbf{Ecological validity.} There are no real patient records, deployed systems, human participants, user outcomes or new model runs. Constructed candidates challenge the plan; they do not imitate likely model outputs. Available released policies cover all tested positive obligations. Missing final inspected artifacts and the selected scope preclude operational harm rates or general AI failure-rate claims.
 
 \balance
 \section{Reproducibility and Research Status}
-The repository provides the frozen inventory, scripts, input hashes, candidate and probe policies, native command receipts and manuscript generation checks~\cite{ours}. Derived floor-union policies retain upstream Apache-2.0 licensing and notices. Original work remains unlicensed pending an author decision. Downloaded papers, credentials and tool binaries are excluded from the distributable archive.
+The repository provides the frozen inventory, scripts, input hashes, candidate and probe policies, native command receipts and manuscript generation checks~\cite{ours}. Derived floor-union policies and copied released policies retain upstream Apache-2.0 licensing and notices. Original work remains unlicensed pending an author decision. Downloaded papers, credentials and tool binaries are excluded from the distributable archive.
 
-AI tools assisted literature retrieval, implementation and manuscript drafting. This does not constitute independent expert review. This manuscript is a technical case-study preprint candidate, not an accepted journal article. Its method is established; the possible contribution is the pinned empirical evidence. External-family replication and independent interpretation review would strengthen a journal submission.
+AI tools assisted literature retrieval, implementation and manuscript drafting. This does not constitute independent expert review. This manuscript is a technical case-study preprint candidate, not an accepted journal article. Its method is established; the possible contribution is the pinned empirical evidence. Broader external-family validation and independent interpretation review would strengthen a journal submission. The released-output null result must be retained in any version of the paper.
 
 \section{Conclusion}
-In one pinned CedarBench clinical family, all 149 original checks accept the constructed candidates, yet 34 of 40 interpreted auditor-access probes have counterexamples. Adjusted positive obligations remain compatible with the ten exception-retaining plans, while intentional exception removal correctly rejects their addition. The result illustrates why acceptance-plan success should be reported separately from coverage of written requirements. It provides a reproducible case study, with explicit limits on novelty, generalization and model-performance claims.
+In one pinned CedarBench clinical family, all 149 original checks accept the constructed candidates, yet 34 of 40 interpreted auditor-access probes have counterexamples. Adjusted positive obligations remain compatible with the ten exception-retaining plans, while intentional exception removal correctly rejects their addition. All available released clinical policies cover the 40 positive probes. In a document-sharing transfer case, both the released baseline and a deliberately narrowed policy pass all 43 checks, although only the baseline covers the two sharing probes. These results separate a demonstrated acceptance gap from an observed synthesis failure: the former is present, while the latter is not found on these probes. Acceptance-plan success should therefore be reported separately from coverage of written requirements. It provides a reproducible case study, with explicit limits on novelty, generalization and model-performance claims.
 
 \begin{thebibliography}{9}
 \bibitem{autocedar} Adarsh Vatsa, Sachi Shome, Yingming Zhou, and William Eiers. 2026. AutoCedar: An Agentic Framework for Verifier-Guided Access Control Policy Synthesis. arXiv:2607.03656v1. \url{https://arxiv.org/abs/2607.03656}
